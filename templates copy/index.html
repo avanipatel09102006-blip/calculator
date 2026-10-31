@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="app">
+    <section class="calc" aria-label="Calculator">
+      <div class="display">
+        <div id="expr" class="expr" aria-hidden="true"></div>
+        <output id="screen" class="screen" aria-live="polite">0</output>
+      </div>
+      <div class="keys" id="keys">
+        <button data-act="clear" class="fn">AC</button>
+        <button data-act="back" class="fn" aria-label="Backspace">⌫</button>
+        <button data-key="%" class="fn">%</button>
+        <button data-key="/" class="op">÷</button>
+        <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+        <button data-key="*" class="op">×</button>
+        <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+        <button data-key="-" class="op">−</button>
+        <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+        <button data-key="+" class="op">+</button>
+        <button data-key="0" class="wide">0</button>
+        <button data-key=".">.</button>
+        <button data-act="equals" class="eq">=</button>
+      </div>
+    </section>
+
+    <aside class="history" aria-label="History">
+      <header>
+        <h2>History</h2>
+        <button id="clearHistory" class="link">Clear</button>
+      </header>
+      <ul id="historyList"></ul>
+      <p id="empty" class="empty">No calculations yet. Results you solve are saved here.</p>
+    </aside>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
